@@ -22,7 +22,6 @@ public class BaseTest {
     @BeforeAll
     public static void tearUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide().screenshots(true).savePageSource(true));
-        Configuration.startMaximized = true;
     }
 
 
