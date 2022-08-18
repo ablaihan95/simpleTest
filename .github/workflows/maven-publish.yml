@@ -20,6 +20,8 @@
           continue-on-error: true
 
         - name: allure generate
+          if: always()
+          run: allure generate
         - uses: actions/upload-artifact@v1
           if: always()
           with:
