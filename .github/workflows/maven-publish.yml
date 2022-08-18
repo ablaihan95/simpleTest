@@ -13,6 +13,8 @@
           with:
             java-version: '11'
             distribution: 'adopt'
+        - name: mvn install
+          run: mvn clean install -U -DskipTests
 
         - name: Run Test
           if: always()
