@@ -16,8 +16,15 @@
 
         - name: Run Test
           if: always()
-          run: mvn package
+          run: mvn clean test -Dselenide.headless=true
           continue-on-error: true
+
+        - name: allure generate
+        - uses: actions/upload-artifact@v1
+          if: always()
+          with:
+            name: allure-report
+            path: ./allure-report
 
         - name: Get Allure history
           uses: actions/checkout@v2
@@ -44,3 +51,4 @@
             PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             PUBLISH_BRANCH: gh-pages
             PUBLISH_DIR: allure-history
+
