@@ -31,11 +31,11 @@
             path: ./target/site/allure-maven-plugin
         - name: allure report
           if: always()
-          run: mvn allure:report1
+          run: mvn allure:report
         - uses: actions/upload-artifact@v1
           if: always()
           with:
-            name: allure-report
+            name: allure-report1
             path: ./target/site/allure-maven-plugin
 
         - name: allure attach
