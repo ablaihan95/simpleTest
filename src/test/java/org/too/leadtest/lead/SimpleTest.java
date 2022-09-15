@@ -1,4 +1,4 @@
-package org.too.leadtest.leadTest;
+package org.too.leadtest.lead;
 
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selectors.byText;
@@ -16,8 +16,8 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.too.leadtest.leadTest.google.MainPage;
-import org.too.leadtest.leadTest.google.SearchPage;
+import org.too.leadtest.lead.google.MainPage;
+import org.too.leadtest.lead.google.SearchPage;
 
 
 public class SimpleTest extends BaseTest {
@@ -63,7 +63,7 @@ public class SimpleTest extends BaseTest {
     @Test
     @Description("Rest test for get request")
     @DisplayName("Третье задание - тест апи")
-    public void restTest() {
+    public void rest() {
         given()
                 .filter(new AllureRestAssured())
                 .get("https://reqres.in/api/single_user")

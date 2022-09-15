@@ -1,6 +1,6 @@
-package org.too.leadtest.leadTest.google;
+package org.too.leadtest.lead.google;
 
-import org.too.leadtest.leadTest.google.elemets.SearchInput;
+import org.too.leadtest.lead.google.elemets.SearchInput;
 
 public class MainPage {
     private final SearchInput searchInput = new SearchInput();
