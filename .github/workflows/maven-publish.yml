@@ -21,38 +21,55 @@
           run: mvn clean test -Dselenide.headless=true
           continue-on-error: true
 
-        - name: allure generate
+        - name: allure agregate
           if: always()
-          run: mvn allure:report
+          run: mvn allure:aggregate
+        - uses: actions/upload-artifact@v1
+          if: always()
+          with:
+            name: allure-report
+            path: ./target/site/allure-maven-plugin
+        - name: allure report
+          if: always()
+          run: mvn allure:report1
         - uses: actions/upload-artifact@v1
           if: always()
           with:
             name: allure-report
             path: ./target/site/allure-maven-plugin
 
-        - name: Get Allure history
-          uses: actions/checkout@v2
+        - name: allure attach
+        - uses: actions/upload-artifact@v1
           if: always()
-          continue-on-error: true
           with:
-            ref: gh-pages
-            path: gh-pages
+            name: allure-report3
+            path: ./allure-report
 
-        - name: Allure Report action from marketplace
-          uses: simple-elf/allure-report-action@master
-          if: always()
-          id: allure-report
-          with:
-            allure_results: target/allure-results
-            gh_pages: gh-pages
-            allure_report: allure-report
-            allure_history: allure-history
 
-        - name: Deploy report to Github Pages
-          if: always()
-          uses: peaceiris/actions-gh-pages@v2
-          env:
-            PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-            PUBLISH_BRANCH: gh-pages
-            PUBLISH_DIR: allure-history
+
+#        - name: Get Allure history
+#          uses: actions/checkout@v2
+#          if: always()
+#          continue-on-error: true
+#          with:
+#            ref: gh-pages
+#            path: gh-pages
+#
+#        - name: Allure Report action from marketplace
+#          uses: simple-elf/allure-report-action@master
+#          if: always()
+#          id: allure-report
+#          with:
+#            allure_results: target/allure-results
+#            gh_pages: gh-pages
+#            allure_report: allure-report
+#            allure_history: allure-history
+#
+#        - name: Deploy report to Github Pages
+#          if: always()
+#          uses: peaceiris/actions-gh-pages@v2
+#          env:
+#            PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#            PUBLISH_BRANCH: gh-pages
+#            PUBLISH_DIR: allure-history
 

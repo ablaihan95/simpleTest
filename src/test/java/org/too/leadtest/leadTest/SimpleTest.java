@@ -1,22 +1,22 @@
 package org.too.leadtest.leadTest;
 
+import static com.codeborne.selenide.Selectors.byName;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.switchTo;
+import static io.qameta.allure.Allure.step;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.hasItems;
+
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
-import io.restassured.response.Response;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.too.leadtest.leadTest.google.MainPage;
 import org.too.leadtest.leadTest.google.SearchPage;
-
-import static com.codeborne.selenide.Selectors.byName;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
-import static io.qameta.allure.Allure.step;
-import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.hasItems;
 
 
 public class SimpleTest extends BaseTest {
