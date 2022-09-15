@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Thu Sep 15 08:31:34 GMT 2022","Thu Sep 15 08:31:57 GMT 2022","23131","","org.too.leadtest.leadTest.SimpleTest","","org.too.leadtest.leadTest.SimpleTest","simpleTest","Первое задание - Тест для Яндекс почты","Just simple test"
+"failed","Thu Sep 15 08:32:05 GMT 2022","Thu Sep 15 08:32:09 GMT 2022","3866","","org.too.leadtest.leadTest.SimpleTest","","org.too.leadtest.leadTest.SimpleTest","restTest","Третье задание - тест апи","Rest test for get request"
+"failed","Thu Sep 15 08:31:58 GMT 2022","Thu Sep 15 08:32:05 GMT 2022","7859","","org.too.leadtest.leadTest.SimpleTest","","org.too.leadtest.leadTest.SimpleTest","simpleTest2","Второе задание - тест для google поиска","Test with little using PageObject"
