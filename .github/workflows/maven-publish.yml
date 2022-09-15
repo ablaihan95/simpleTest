@@ -28,7 +28,7 @@
           if: always()
           with:
             name: allure-report
-            path: ./target/site/allure-maven-plugin
+            path: target/site/allure-maven-plugin
 
         - name: allure report
           if: always()
@@ -40,7 +40,8 @@
             path: ./target/site/allure-maven-plugin
 
         - name: allure attach
-          uses: actions/upload-artifact@v1
+          run: echo ls ./target/site/allure-maven-plugin
+        - uses: actions/upload-artifact@v1
           if: always()
           with:
             name: allure-report3

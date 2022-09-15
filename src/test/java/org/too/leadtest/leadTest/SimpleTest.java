@@ -45,6 +45,7 @@ public class SimpleTest extends BaseTest {
         });
     }
 
+    @Disabled
     @Test
     @Description("Test with little using PageObject")
     @DisplayName("Второе задание - тест для google поиска")
