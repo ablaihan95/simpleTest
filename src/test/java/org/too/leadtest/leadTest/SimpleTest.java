@@ -11,6 +11,7 @@ import static org.hamcrest.Matchers.hasItems;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
+import io.qameta.allure.restassured.AllureRestAssured;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -45,6 +46,7 @@ public class SimpleTest extends BaseTest {
         });
     }
 
+    @Disabled
     @Test
     @Description("Test with little using PageObject")
     @DisplayName("Второе задание - тест для google поиска")
@@ -57,12 +59,13 @@ public class SimpleTest extends BaseTest {
                 .checkResultHasText("sulpak.kz");
     }
 
-    @Disabled
+
     @Test
     @Description("Rest test for get request")
     @DisplayName("Третье задание - тест апи")
     public void restTest() {
         given()
+                .filter(new AllureRestAssured())
                 .get("https://reqres.in/api/single_user")
                 .then()
                 .log().ifValidationFails()

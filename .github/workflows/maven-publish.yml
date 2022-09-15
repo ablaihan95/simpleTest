@@ -41,12 +41,8 @@
 
         - name: allure attach
           run: ls ./target/site/allure-maven-plugin
-        - uses: actions/upload-artifact@v1
-          if: always()
-          with:
-            name: allure-report3
-            path: ./allure-report
 
+        - run: ls -a
 
 
 #        - name: Get Allure history
