@@ -49,18 +49,17 @@
             <version>${junit.version}</version>
         </dependency>
         <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-commandline</artifactId>
+            <version>2.18.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>5.1.1</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-commandline -->
-        <dependency>
-            <groupId>io.qameta.allure</groupId>
-            <artifactId>allure-commandline</artifactId>
-            <version>2.18.1</version>
-            <type>pom</type>
-        </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -103,7 +102,10 @@
                 <version>2.8</version>
                 <configuration>
                     <reportVersion>2.18.1</reportVersion>
-                    <allureDownloadUrl>https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/%s/allure-%s.zip</allureDownloadUrl>
+                    <installDirectory>${project.build.directory}</installDirectory>
+                    <allureDownloadUrl>
+                        http://artifactory/artifactory/remote-repos/io/qameta/allure/allure-commandline/xxxx/allure-commandline-xxxx.zip
+                    </allureDownloadUrl>
                 </configuration>
             </plugin>
         </plugins>

@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -17,6 +18,7 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItems;
 
+@Disabled
 public class SimpleTest extends BaseTest {
     @Test
     @Description("Just simple test")
