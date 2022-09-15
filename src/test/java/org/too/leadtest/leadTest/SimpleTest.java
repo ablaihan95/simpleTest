@@ -18,8 +18,9 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.hasItems;
 
-@Disabled
+
 public class SimpleTest extends BaseTest {
+    @Disabled
     @Test
     @Description("Just simple test")
     @DisplayName("Первое задание - Тест для Яндекс почты")
@@ -52,7 +53,7 @@ public class SimpleTest extends BaseTest {
         new MainPage()
                 .doSearchWithEnter("купить кофемашину bork c804");
         new SearchPage()
-               .checkSizeGreaterThan(10)
+                .checkSizeGreaterThan(10)
                 .checkResultHasText("sulpak.kz");
     }
 
@@ -60,13 +61,13 @@ public class SimpleTest extends BaseTest {
     @Description("Rest test for get request")
     @DisplayName("Третье задание - тест апи")
     public void restTest() {
-                given()
-                        .get("https://reqres.in/api/single_user")
+        given()
+                .get("https://reqres.in/api/single_user")
                 .then()
-                        .log().ifValidationFails()
-                        .statusCode(200)
-                        .assertThat().body("data.name", hasItems("janet"));
-                // тут нет janet для положительного теста попробуйте "cerulean"
+                .log().ifValidationFails()
+                .statusCode(200)
+                .assertThat().body("data.name", hasItems("janet"));
+        // тут нет janet для положительного теста попробуйте "cerulean"
 
 
     }

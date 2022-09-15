@@ -23,12 +23,12 @@
 
         - name: allure generate
           if: always()
-          run: mvn:allure generate
+          run: mvn allure:report
         - uses: actions/upload-artifact@v1
           if: always()
           with:
             name: allure-report
-            path: ./allure-report
+            path: ./target/site/allure-maven-plugin
 
         - name: Get Allure history
           uses: actions/checkout@v2
