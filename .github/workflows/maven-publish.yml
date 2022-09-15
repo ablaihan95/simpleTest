@@ -23,7 +23,7 @@
 
         - name: allure generate
           if: always()
-          run: allure generate
+          run: mvn:allure generate
         - uses: actions/upload-artifact@v1
           if: always()
           with:
