@@ -40,7 +40,7 @@
             path: ./target/site/allure-maven-plugin
 
         - name: allure attach
-          run: echo ls ./target/site/allure-maven-plugin
+          run: ls ./target/site/allure-maven-plugin
         - uses: actions/upload-artifact@v1
           if: always()
           with:
